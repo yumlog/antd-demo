@@ -43,8 +43,5 @@ export default {
 .ant-layout-header {
   height: auto;
   line-height: inherit;
-  .ant-menu-item-selected {
-    background-color: $primary;
-  }
 }
 </style>
