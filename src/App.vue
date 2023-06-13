@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <Navigation/>
-    <router-view/>
+    <AppLayout/>
   </div>
 </template>
 
 <script>
-import Navigation from './components/Nav/Navigation'
+import AppLayout from '@/layout/AppLayout.vue'
 
 export default {
   name: 'App',
   components: {
-    Navigation,
+    AppLayout,
   }
 }
 </script>

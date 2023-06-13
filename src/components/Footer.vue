@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <h1>여기가 헤더!! 🙀</h1>
-  </div>
+  <a-layout-footer>
+    여기가 푸터~
+  </a-layout-footer>
 </template>
 
 <script>
 export default {
-  name: 'Navigation',
+  name: 'Footer',
 
   data() {
     return {
@@ -25,4 +25,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 </style>

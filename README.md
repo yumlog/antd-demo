@@ -24,13 +24,15 @@ yarn lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
-### Vue2 + Antd + Vue Router Install
+### Vue2 + Antd + Vue Router + Sass Install
 ```
 yarn global add @vue/cli
 vue create 프로젝트명
 Default ([Vue 2] babel, eslint) 선택
 yarn add ant-design-vue@1.7.8
 yarn add vue-router@3.5.3
+yarn add sass
+yarn add sass-loader@10
 ```
 **Main.js에 아래 내용 추가**
 ```

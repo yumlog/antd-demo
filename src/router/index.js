@@ -6,7 +6,7 @@ const routes = [
     path: '/home',
     name: '메인',
     component: () => import('@/views/Home'),
-    alias: '',
+    alias: '/',
     meta: {
       TransitionName: 'fade'
     }
@@ -16,7 +16,8 @@ const routes = [
     name: 'NotFound',
     component: () => import('@/views/NotFound'),
     meta: {
-      TransitionName: 'fade'
+      TransitionName: 'fade',
+      layout: 'BlankLayout'
     }
   },
   {
