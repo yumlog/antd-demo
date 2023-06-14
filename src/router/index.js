@@ -7,19 +7,19 @@ const routes = [
     name: '메인',
     component: () => import('@/views/Home'),
     alias: '/',
-    meta: { transitionName: 'fade' }
+    meta: { transitionName: 'slidee' }
   },
   {
     path: '/about',
     name: '소개',
     component: () => import('@/views/About'),
-    meta: { transitionName: 'fade' }
+    meta: { transitionName: 'fadee' }
   },
   {
     path: '/example',
     name: '예시',
     component: () => import('@/views/Example'),
-    meta: { transitionName: 'slide' }
+    meta: { transitionName: 'scale' }
   },
   {
     path: '/notFound',
