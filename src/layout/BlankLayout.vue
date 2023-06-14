@@ -1,12 +1,18 @@
 <template>
-  <div>
+  <TransitionPage>
     <router-view/>
-  </div>
+  </TransitionPage>
 </template>
 
 <script>
+import TransitionPage from '@/components/TransitionPage'
+
 export default {
   name: 'BlankLayout',
+
+  components: {
+    TransitionPage,
+  },
 
   data() {
     return {

@@ -1,7 +1,9 @@
 <template>
   <div>
-    <h1>여기가 홈이야😂</h1>
-    <div style="height: 500px; background: palegoldenrod"></div>
+    <a-page-header
+      title="🏡 메인"
+      sub-title="This is Main page"
+    />
   </div>
 </template>
 

@@ -1,7 +1,9 @@
 <template>
   <div>
-    <h1>내 소개를 하자면...🤢</h1>
-    <div style="height: 200px; background: pink"></div>
+    <a-page-header
+      title="🎤 소개"
+      sub-title="This is About page"
+    />
   </div>
 </template>
 

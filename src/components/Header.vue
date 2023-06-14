@@ -1,7 +1,4 @@
 <template>
-  <!-- <div>
-    <h1>여기가 헤더!! 🙀</h1>
-  </div> -->
   <a-layout-header>
     <div class="logo"></div>
     <a-menu
@@ -33,7 +30,7 @@ export default {
 				{
           id: '0',
 					path: "/home",
-					name: "홈",
+					name: "메인",
 				},
 				{
           id: '1',
