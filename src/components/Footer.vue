@@ -25,5 +25,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.ant-layout-footer {
+  text-align: center;
+}
 </style>

@@ -7,18 +7,25 @@ const routes = [
     name: '메인',
     component: () => import('@/views/Home'),
     alias: '/',
-    meta: {
-      TransitionName: 'fade'
-    }
+    meta: { transitionName: 'fade' }
+  },
+  {
+    path: '/about',
+    name: '소개',
+    component: () => import('@/views/About'),
+    meta: { transitionName: 'fade' }
+  },
+  {
+    path: '/example',
+    name: '예시',
+    component: () => import('@/views/Example'),
+    meta: { transitionName: 'slide' }
   },
   {
     path: '/notFound',
     name: 'NotFound',
     component: () => import('@/views/NotFound'),
-    meta: {
-      TransitionName: 'fade',
-      layout: 'BlankLayout'
-    }
+    meta: { layout: 'BlankLayout' }
   },
   {
     path: '/:pathMatch(.*)*',

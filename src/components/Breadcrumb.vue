@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <h1>여기가 홈이야😂</h1>
-    <div style="height: 500px; background: palegoldenrod"></div>
-  </div>
+  <a-breadcrumb>
+    <a-breadcrumb-item>Home</a-breadcrumb-item>
+    <a-breadcrumb-item>App</a-breadcrumb-item>
+  </a-breadcrumb>
 </template>
 
 <script>
 export default {
-  name: 'Home',
+  name: 'Breadcrumb',
 
   data() {
     return {
@@ -26,5 +26,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.ant-breadcrumb {
+  margin: 16px 0;
+}
 </style>
