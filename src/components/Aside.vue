@@ -13,7 +13,7 @@
     </a-button>
     <a-menu
       mode="inline"
-      :default-selected-keys="['2']"
+      :default-selected-keys="['0']"
       :default-open-keys="['sub1']"
     >
       <a-sub-menu

@@ -26,7 +26,8 @@ module.exports = defineConfig({
             "disabled-color": "rgba(0, 0, 0, 0.25)",
             "border-radius-base": "4px",
             "border-color-base": "#d9d9d9",
-            "box-shadow-base": "0 2px 8px rgba(0, 0, 0, 0.15)"
+            "box-shadow-base": "0 2px 8px rgba(0, 0, 0, 0.15)",
+            "font-family": "Pretendard, sans-serif",
           },
           javascriptEnabled: true,
         },

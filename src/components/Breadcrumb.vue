@@ -1,9 +1,12 @@
 <template>
   <a-breadcrumb>
-    <a-breadcrumb-item href="/">
+    <a-breadcrumb-item>
       <a-icon type="home" />
     </a-breadcrumb-item>
-    <a-breadcrumb-item v-for="(route, index) in routes" :key="index">
+    <a-breadcrumb-item
+      v-for="(route, index) in routes"
+      :key="index"
+    >
       <router-link :to="route.path">
         {{ route.name }}
       </router-link>
