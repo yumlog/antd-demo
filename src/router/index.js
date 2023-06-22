@@ -13,7 +13,7 @@ const routes = [
     path: '/about',
     name: '소개',
     component: () => import('@/views/About'),
-    meta: { transitionName: 'fadee' }
+    meta: { transitionName: 'fadee', title: '소개앵' }
   },
   {
     path: '/example',

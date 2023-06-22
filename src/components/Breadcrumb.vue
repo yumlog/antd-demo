@@ -1,7 +1,13 @@
 <template>
   <a-breadcrumb>
-    <a-breadcrumb-item>Home</a-breadcrumb-item>
-    <a-breadcrumb-item>App</a-breadcrumb-item>
+    <a-breadcrumb-item href="/">
+      <a-icon type="home" />
+    </a-breadcrumb-item>
+    <a-breadcrumb-item v-for="(route, index) in routes" :key="index">
+      <router-link :to="route.path">
+        {{ route.name }}
+      </router-link>
+    </a-breadcrumb-item>
   </a-breadcrumb>
 </template>
 
@@ -11,16 +17,25 @@ export default {
 
   data() {
     return {
-      
+      routes: [],
     };
   },
 
   mounted() {
-    
+    this.routes = this.$route.matched;
+  },
+
+  created() {
+    this.$router.beforeEach((to, from, next) => {
+      this.updateBreadcrumb(to);
+      next();
+    });
   },
 
   methods: {
-    
+    updateBreadcrumb(route) {
+      this.routes = route.matched;
+    },
   },
 };
 </script>

@@ -1,30 +1,39 @@
 <template>
-  <a-layout-sider>
+  <a-layout-sider
+    v-model="collapsed"
+    :trigger="null"
+    collapsible
+  >
+    <a-button
+      class="trigger"
+      type="primary"
+      @click="collapsed = !collapsed"
+    >
+      <a-icon :type="collapsed ? 'menu-unfold' : 'menu-fold'" />
+    </a-button>
     <a-menu
       mode="inline"
       :default-selected-keys="['2']"
       :default-open-keys="['sub1']"
     >
-      <a-sub-menu key="sub1">
+      <a-sub-menu
+        v-for="menu in menus"
+        :key="menu.id"
+      >
         <span slot="title">
-          <a-icon type="user"/>유저
+          <a-icon :type="menu.icon"/>
+          <span>{{ menu.name }}</span>
         </span>
-        <a-menu-item key="1">
-          유저 메뉴1
-        </a-menu-item>
-        <a-menu-item key="2">
-          유저 메뉴2
-        </a-menu-item>
-      </a-sub-menu>
-      <a-sub-menu key="sub2">
-        <span slot="title">
-          <a-icon type="laptop"/>작업
-        </span>
-        <a-menu-item key="3">
-          작업 메뉴1
-        </a-menu-item>
-        <a-menu-item key="4">
-          작업 메뉴2
+        <a-menu-item
+          v-for="item in menu.items"
+          :key="item.id"
+        >
+          <router-link
+            :to="item.path"
+          >
+            <a-icon :type="item.icon"/>
+            <span>{{ item.name }}</span>
+          </router-link>
         </a-menu-item>
       </a-sub-menu>
     </a-menu>
@@ -37,7 +46,47 @@ export default {
 
   data() {
     return {
-      
+      collapsed: false,
+      menus: [
+        {
+          id: 'sub1',
+          icon: 'user',
+          name: '첫번째 메뉴',
+          items: [
+            {
+              id: '0',
+              path: '/home',
+              icon: 'home',
+              name: '메인',
+            },
+            {
+              id: '1',
+              path: '/about',
+              icon: 'message',
+              name: '소개',
+            },
+          ],
+        },
+        {
+          id: 'sub2',
+          icon: 'laptop',
+          name: '두번째 메뉴',
+          items: [
+            {
+              id: '2',
+              path: '/example',
+              icon: 'build',
+              name: '예시',
+            },
+            {
+              id: '3',
+              path: '/test',
+              icon: 'warning',
+              name: '👽',
+            },
+          ],
+        },
+      ],
     };
   },
 
@@ -53,10 +102,19 @@ export default {
 
 <style lang="scss" scoped>
 .ant-layout-sider {
+  position: relative;
   width: 200px;
   background: #fff;
 }
 .ant-menu {
   height: 100%;
+}
+.trigger {
+  position: absolute;
+  z-index: 10;
+  top: 8px;
+  left: -36px;
+  border-radius: 4px 0 0 4px;
+  padding: 0 10px;
 }
 </style>

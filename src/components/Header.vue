@@ -29,23 +29,23 @@ export default {
       items: [
 				{
           id: '0',
-					path: "/home",
-					name: "메인",
+					path: '/home',
+					name: '메인',
 				},
 				{
           id: '1',
-					path: "/about",
-					name: "소개",
+					path: '/about',
+					name: '소개',
 				},
         {
           id: '2',
-					path: "/example",
-					name: "예시",
+					path: '/example',
+					name: '예시',
 				},
         {
           id: '3',
-					path: "/test",
-					name: "👽",
+					path: '/test',
+					name: '👽',
 				},
       ],
     };
