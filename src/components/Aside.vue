@@ -15,6 +15,8 @@
       mode="inline"
       :default-selected-keys="['0']"
       :default-open-keys="['sub1']"
+      :open-keys="openKeys"
+      @openChange="onOpenChange"
     >
       <a-sub-menu
         v-for="menu in menus"
@@ -47,6 +49,8 @@ export default {
   data() {
     return {
       collapsed: false,
+      rootSubmenuKeys: ['sub1', 'sub2', 'sub4'],
+      openKeys: ['sub1'],
       menus: [
         {
           id: 'sub1',
@@ -95,7 +99,14 @@ export default {
   },
 
   methods: {
-    
+    onOpenChange(openKeys) {
+      const latestOpenKey = openKeys.find(key => this.openKeys.indexOf(key) === -1);
+      if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
+        this.openKeys = openKeys;
+      } else {
+        this.openKeys = latestOpenKey ? [latestOpenKey] : [];
+      }
+    },
   },
 };
 </script>

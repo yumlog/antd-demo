@@ -6,16 +6,26 @@
       mode="horizontal"
       :default-selected-keys="['0']"
     >
-      <a-menu-item
-        v-for="item in items"
-        :key="item.id"
+      <a-sub-menu
+        v-for="menu in menus"
+        :key="menu.id"
       >
-        <router-link
-          :to="item.path"
+        <span slot="title">
+          <a-icon :type="menu.icon"/>
+          <span>{{ menu.name }}</span>
+        </span>
+        <a-menu-item
+          v-for="item in menu.items"
+          :key="item.id"
         >
-          {{ item.name }}
-        </router-link>
-      </a-menu-item>
+          <router-link
+            :to="item.path"
+          >
+            <a-icon :type="item.icon"/>
+            <span>{{ item.name }}</span>
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
     </a-menu>
   </a-layout-header>
 </template>
@@ -26,27 +36,45 @@ export default {
 
   data() {
     return {
-      items: [
-				{
-          id: '0',
-					path: '/home',
-					name: '메인',
-				},
-				{
-          id: '1',
-					path: '/about',
-					name: '소개',
-				},
+      menus: [
         {
-          id: '2',
-					path: '/example',
-					name: '예시',
-				},
+          id: 'sub1',
+          icon: 'user',
+          name: '첫번째 메뉴',
+          items: [
+            {
+              id: '0',
+              path: '/home',
+              icon: 'home',
+              name: '메인',
+            },
+            {
+              id: '1',
+              path: '/about',
+              icon: 'message',
+              name: '소개',
+            },
+          ],
+        },
         {
-          id: '3',
-					path: '/test',
-					name: '👽',
-				},
+          id: 'sub2',
+          icon: 'laptop',
+          name: '두번째 메뉴',
+          items: [
+            {
+              id: '2',
+              path: '/example',
+              icon: 'build',
+              name: '예시',
+            },
+            {
+              id: '3',
+              path: '/notFound',
+              icon: 'warning',
+              name: '👽',
+            },
+          ],
+        },
       ],
     };
   },
